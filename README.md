@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Silvercast Billboard
+
+- Pull in live data from an API to dynamically update content on a billboard hosted by Silvercast.
+- Create managaed content
+- Jira ticket https://jira.savagebeast.com/browse/DISPLAYAD-17976
+
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Environment variables (required)
+
+Two local envirnment variables are needed that contain the authentication keys to the CMS. create a `.env.local` file in the root of the project and include these variables along with it's values.
+
+- `REACT_APP_SPACE_ID` and `REACT_APP_CONTENT_DELIVERY`
 
 ## Available Scripts
 
