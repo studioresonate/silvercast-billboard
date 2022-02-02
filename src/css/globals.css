@@ -1,6 +1,5 @@
 :root {
   --main-bg-color: white;
-  --section: #cbcbcb;
   --black: #000;
   --white: #fff;
   --red: #730000;
@@ -29,7 +28,7 @@ body {
 }
 
 section {
-  background-color: var(--section);
+  background-color: var(--black);
 }
 
 .sectionBackground {
@@ -41,6 +40,11 @@ section {
   z-index: 1;
 }
 
+h2,
+h3 {
+  padding: 0;
+  margin: 1rem 0;
+}
 h2,
 h3,
 .supportingImage {
@@ -55,7 +59,7 @@ h3 {
 /* for testing remove for production */
 
 section {
-  outline: 1px solid var(--black);
+  outline: 1px solid var(--white);
 }
 .panelNumber {
   position: absolute;

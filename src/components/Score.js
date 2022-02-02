@@ -86,11 +86,13 @@ export default function DisplayScore(props) {
   } else {
     return (
       <>
-        <Container>
-          <Scoreboard className="loading">
-            <li>Loading</li>
-          </Scoreboard>
-        </Container>
+        {props.show !== false && (
+          <Container>
+            <Scoreboard className="loading">
+              <li>Loading</li>
+            </Scoreboard>
+          </Container>
+        )}
       </>
     );
   }

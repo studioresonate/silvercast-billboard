@@ -1,115 +1,25 @@
 const query = `
 {
-  billboard(id: "5Bmsdd1UYUmDTvSQ2bGrHY"){
-    instructions
-    showScores
-    panel1 {
-   		__typename
-      ... on Panel1BillboardMessaging {
-        theme
-        headline
-        subHeadline
-        supportingImage {
-          url
-          title
-          fileName
-          contentType
-          width
-          height
-        }
-        backgroundImage {
-          url
-          title
-          fileName
-          width
-          height
-        }
+  billboard(id: "6ZtluvEWIUjOrihD9rO3kE") {
+    panelSelection {
+      theme
+      showScores
+      panel1Animation
+      panel1Headline
+      panel1SubHeadline
+      panel2Animation
+      panel2Headline
+      panel2SubHeadline
+      panel3Animation
+      panel3Headline
+      panel3SubHeadline
+      billboardBackgroundImage {
+        title
+        url
+        width
+        height
       }
-      sys {
-        id
-        publishedAt
-      }
-    }
-    panel2 {
-   		__typename
-      ... on Panel2BillboardMessaging {
-        theme
-        headline
-        subHeadline
-        supportingImage {
-          url
-          title
-          fileName
-          contentType
-          width
-          height
-        }
-        backgroundImage {
-          url
-          title
-          fileName
-          width
-          height
-        }
-      }
-      sys {
-        id
-        publishedAt
-      }
-    }
-    panel3 {
-   		__typename
-      ... on Panel3BillboardMessaging {
-        theme
-        headline
-        subHeadline
-        supportingImage {
-          url
-          title
-          fileName
-          contentType
-          width
-          height
-        }
-        backgroundImage {
-          url
-          title
-          fileName
-          width
-          height
-        }
-      }
-      sys {
-        id
-        publishedAt
-      }
-    }
-    panel4 {
-   		__typename
-      ... on Panel4BillboardMessaging {
-        theme
-        headline
-        subHeadline
-        supportingImage {
-          url
-          title
-          fileName
-          contentType
-          width
-          height
-        }
-        backgroundImage {
-          url
-          title
-          fileName
-          width
-          height
-        }
-      }
-      sys {
-        id
-        publishedAt
-      }
+      backgroundAnimation
     }
   }
 }

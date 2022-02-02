@@ -6,7 +6,9 @@ import query from "./components/Query";
 
 const Panels = styled.div`
   display: flex;
+  width: 2512px;
   height: 341px;
+  position: relative;
   section {
     padding: 10px;
     position: relative;
@@ -34,25 +36,27 @@ const Panel1Subheadline = styled.h3`
 // Panel 2
 
 const Panel2 = styled.section`
-  width: 800px;
-  .supportingImage {
-    height: 100px;
-    object-fit: fill;
+  width: 1648px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  .copy {
+    padding: 0 4rem;
   }
 `;
 
 const Panel2Headline = styled.h2`
-  font-size: 1.6rem;
+  font-size: 3.6rem;
 `;
 
 const Panel2Subheadline = styled.h3`
-  font-size: 1.1rem;
+  font-size: 2.4rem;
 `;
 
 // Panel 3
 
 const Panel3 = styled.section`
-  width: 848px;
+  width: 392px;
   .supportingImage {
     height: 100px;
     object-fit: fill;
@@ -64,24 +68,6 @@ const Panel3Headline = styled.h2`
 `;
 
 const Panel3Subheadline = styled.h3`
-  font-size: 1.1rem;
-`;
-
-// Panel 4
-
-const Panel4 = styled.section`
-  width: 392px;
-  .supportingImage {
-    height: 100px;
-    object-fit: fill;
-  }
-`;
-
-const Panel4Headline = styled.h2`
-  font-size: 1.6rem;
-`;
-
-const Panel4Subheadline = styled.h4`
   font-size: 1.1rem;
 `;
 
@@ -121,134 +107,65 @@ function App() {
 
   return (
     <div className="App">
-      <Panels id="panels">
-        {/* panel 1 */}
-
-        <Panel1 id="panel1" className={billboard.panel1.theme}>
+      <Panels id="panels" className={billboard.panelSelection.theme}>
+        <Panel1 id="panel1">
           <p className="panelNumber">Panel one</p>
 
-          {billboard.panel1.supportingImage !== null && (
-            <img
-              src={billboard.panel1.supportingImage.url}
-              alt={billboard.panel1.supportingImage.title}
-              className="supportingImage"
-            />
+          {billboard.panelSelection.panel1Headline !== null && (
+            <Panel1Headline>
+              {billboard.panelSelection.panel1Headline}
+            </Panel1Headline>
           )}
 
-          {billboard.panel1.headline !== null && (
-            <Panel1Headline>{billboard.panel1.headline}</Panel1Headline>
-          )}
-
-          {billboard.panel1.subHeadline !== null && (
+          {billboard.panelSelection.panel1SubHeadline !== null && (
             <Panel1Subheadline>
-              {billboard.panel1.subHeadline}
+              {billboard.panelSelection.panel1SubHeadline}
             </Panel1Subheadline>
           )}
-
-          {billboard.panel1.backgroundImage !== null && (
-            <img
-              src={billboard.panel1.backgroundImage.url}
-              alt={billboard.panel1.backgroundImage.title}
-              className="sectionBackground"
-            />
-          )}
         </Panel1>
-        {/* panel 2 */}
-        <Panel2 id="panel2" className={billboard.panel2.theme}>
+
+        <Panel2 id="panel2">
           <p className="panelNumber">Panel two</p>
 
-          {billboard.panel2.supportingImage !== null && (
-            <img
-              src={billboard.panel2.supportingImage.url}
-              alt={billboard.panel2.supportingImage.title}
-              className="supportingImage"
-            />
-          )}
+          <div className="copy">
+            {billboard.panelSelection.panel1Headline !== null && (
+              <Panel2Headline>
+                {billboard.panelSelection.panel2Headline}
+              </Panel2Headline>
+            )}
 
-          {billboard.panel2.headline !== null && (
-            <Panel2Headline>{billboard.panel2.headline}</Panel2Headline>
-          )}
+            {billboard.panelSelection.panel2SubHeadline !== null && (
+              <Panel2Subheadline>
+                {billboard.panelSelection.panel2SubHeadline}
+              </Panel2Subheadline>
+            )}
+          </div>
 
-          {billboard.panel2.subHeadline !== null && (
-            <Panel2Subheadline>
-              {billboard.panel2.subHeadline}
-            </Panel2Subheadline>
-          )}
-
-          {billboard.panel2.backgroundImage !== null && (
-            <img
-              src={billboard.panel2.backgroundImage.url}
-              alt={billboard.panel2.backgroundImage.title}
-              className="sectionBackground"
-            />
-          )}
+          <Scores show={billboard.panelSelection.showScores} />
         </Panel2>
-        {/* panel 3 */}
-        <Panel3 id="panel3" className={billboard.panel3.theme}>
+
+        <Panel3 id="panel3">
           <p className="panelNumber">Panel three</p>
 
-          {billboard.panel3.supportingImage !== null && (
-            <img
-              src={billboard.panel3.supportingImage.url}
-              alt={billboard.panel3.supportingImage.title}
-              className="supportingImage"
-            />
+          {billboard.panelSelection.panel1Headline !== null && (
+            <Panel3Headline>
+              {billboard.panelSelection.panel3Headline}
+            </Panel3Headline>
           )}
-          {billboard.panel3.headline !== null && (
-            <Panel3Headline>{billboard.panel3.headline}</Panel3Headline>
-          )}
-          {billboard.panel3.subHeadline !== null && (
+
+          {billboard.panelSelection.panel3SubHeadline !== null && (
             <Panel3Subheadline>
-              {billboard.panel3.subHeadline}
+              {billboard.panelSelection.panel3SubHeadline}
             </Panel3Subheadline>
           )}
-          {billboard.panel3.backgroundImage !== null && (
-            <img
-              src={billboard.panel3.backgroundImage.url}
-              alt={billboard.panel3.backgroundImage.title}
-              className="sectionBackground"
-            />
-          )}
-          {/* load in scores */}
-
-          <Scores show={billboard.showScores} />
         </Panel3>
-        {/* panel 4 */}
-        <Panel4
-          id="panel4"
-          className={billboard.panel4.theme}
-          // style={{
-          //   backgroundImage: `url(${billboard.panel4.backgroundImage.url})`,
-          // }}
-        >
-          <p className="panelNumber">Panel four</p>
-
-          {billboard.panel4.supportingImage !== null && (
-            <img
-              src={billboard.panel4.supportingImage.url}
-              alt={billboard.panel4.supportingImage.title}
-              className="supportingImage"
-            />
-          )}
-
-          {billboard.panel4.headline !== null && (
-            <Panel4Headline>{billboard.panel4.headline}</Panel4Headline>
-          )}
-
-          {billboard.panel4.subHeadline !== null && (
-            <Panel4Subheadline>
-              {billboard.panel4.subHeadline}
-            </Panel4Subheadline>
-          )}
-
-          {billboard.panel4.backgroundImage !== null && (
-            <img
-              src={billboard.panel4.backgroundImage.url}
-              alt={billboard.panel4.backgroundImage.title}
-              className="sectionBackground"
-            />
-          )}
-        </Panel4>
+        {billboard.panelSelection.billboardBackgroundImage !== null && (
+          <img
+            src={billboard.panelSelection.billboardBackgroundImage.url}
+            alt={billboard.panelSelection.billboardBackgroundImage.title}
+            className="sectionBackground"
+          />
+        )}
       </Panels>
     </div>
   );
