@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Anime, { anime } from "react-anime";
+
 import styled from "styled-components";
 
 import Scores from "./components/Score";
@@ -105,9 +107,19 @@ function App() {
     return "Loading...";
   }
 
+  // remove space from animation dropdown value
+
+  const animeType2 = `${billboard.panelSelection.panel2Animation}`;
+  const animeValue2 = animeType2.replace(/ /g, "");
+  console.log(animeValue2);
+
   return (
     <div className="App">
-      <Panels id="panels" className={billboard.panelSelection.theme}>
+      <Panels
+        id="panels"
+        data-aria={animeValue2}
+        className={`${billboard.panelSelection.theme}`}
+      >
         <Panel1 id="panel1">
           <p className="panelNumber">Panel one</p>
 
@@ -126,19 +138,117 @@ function App() {
 
         <Panel2 id="panel2">
           <p className="panelNumber">Panel two</p>
+          <div className={`copy ${animeValue2}`}>
+            {(() => {
+              switch (animeValue2) {
+                case "FadeIn":
+                  return (
+                    <Anime
+                      opacity={[0, 1]}
+                      delay={anime.stagger(200)}
+                      duration={2000}
+                      easing="easeInOutExpo"
+                    >
+                      {billboard.panelSelection.panel1Headline !== null && (
+                        <Panel2Headline>
+                          {billboard.panelSelection.panel2Headline}
+                        </Panel2Headline>
+                      )}
 
-          <div className="copy">
-            {billboard.panelSelection.panel1Headline !== null && (
-              <Panel2Headline>
-                {billboard.panelSelection.panel2Headline}
-              </Panel2Headline>
-            )}
+                      {billboard.panelSelection.panel2SubHeadline !== null && (
+                        <Panel2Subheadline>
+                          {billboard.panelSelection.panel2SubHeadline}
+                        </Panel2Subheadline>
+                      )}
+                    </Anime>
+                  );
+                case "SlideLeft":
+                  return (
+                    <Anime
+                      translateX={[-300, 0]}
+                      opacity={[0, 1]}
+                      delay={anime.stagger(200)}
+                      duration={2000}
+                      easing="easeInOutExpo"
+                    >
+                      {billboard.panelSelection.panel1Headline !== null && (
+                        <Panel2Headline>
+                          {billboard.panelSelection.panel2Headline}
+                        </Panel2Headline>
+                      )}
 
-            {billboard.panelSelection.panel2SubHeadline !== null && (
-              <Panel2Subheadline>
-                {billboard.panelSelection.panel2SubHeadline}
-              </Panel2Subheadline>
-            )}
+                      {billboard.panelSelection.panel2SubHeadline !== null && (
+                        <Panel2Subheadline>
+                          {billboard.panelSelection.panel2SubHeadline}
+                        </Panel2Subheadline>
+                      )}
+                    </Anime>
+                  );
+                case "SlideDown":
+                  return (
+                    <Anime
+                      translateY={[-300, 0]}
+                      opacity={[0, 1]}
+                      delay={anime.stagger(200)}
+                      duration={2000}
+                      easing="easeInOutExpo"
+                    >
+                      {billboard.panelSelection.panel1Headline !== null && (
+                        <Panel2Headline>
+                          {billboard.panelSelection.panel2Headline}
+                        </Panel2Headline>
+                      )}
+
+                      {billboard.panelSelection.panel2SubHeadline !== null && (
+                        <Panel2Subheadline>
+                          {billboard.panelSelection.panel2SubHeadline}
+                        </Panel2Subheadline>
+                      )}
+                    </Anime>
+                  );
+                case "SlideUp":
+                  return (
+                    <Anime
+                      translateY={[300, 0]}
+                      opacity={[0, 1]}
+                      delay={anime.stagger(200)}
+                      duration={2000}
+                      easing="easeInOutExpo"
+                    >
+                      {billboard.panelSelection.panel1Headline !== null && (
+                        <Panel2Headline>
+                          {billboard.panelSelection.panel2Headline}
+                        </Panel2Headline>
+                      )}
+
+                      {billboard.panelSelection.panel2SubHeadline !== null && (
+                        <Panel2Subheadline>
+                          {billboard.panelSelection.panel2SubHeadline}
+                        </Panel2Subheadline>
+                      )}
+                    </Anime>
+                  );
+                default:
+                  return (
+                    <Anime opacity={1}>
+                      {billboard.panelSelection.panel1Headline !== null && (
+                        <Panel2Headline>
+                          {billboard.panelSelection.panel2Headline}
+                        </Panel2Headline>
+                      )}
+
+                      {billboard.panelSelection.panel2SubHeadline !== null && (
+                        <Panel2Subheadline>
+                          {billboard.panelSelection.panel2SubHeadline}
+                        </Panel2Subheadline>
+                      )}
+                    </Anime>
+                  );
+              }
+            })()}
+            <Anime opacity={1} className={`${animeValue2}`}>
+              CHEE
+            </Anime>
           </div>
 
           <Scores show={billboard.panelSelection.showScores} />
