@@ -34,11 +34,11 @@ h3.FadeIn {
 
 h2.SlideLeft,
 img.SlideLeft {
-  animation: slideInLeft 0.7s ease-in-out 0s forwards;
+  animation: slideInLeft 0.7s ease-out 0s forwards;
 }
 
 h3.SlideLeft {
-  animation: slideInLeft 0.4s ease-in-out 0s forwards;
+  animation: slideInLeft 0.4s ease-out 0s forwards;
   animation-delay: 0.5s;
 }
 
@@ -56,7 +56,7 @@ h3.SlideLeft {
 }
 
 h2.SlideDown {
-  animation: slideInDown 0.6s ease-in-out 0s forwards;
+  animation: slideInDown 0.6s ease-out 0s forwards;
 }
 
 h3.SlideDown {

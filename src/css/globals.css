@@ -29,6 +29,7 @@ body {
 
 section {
   background-color: var(--black);
+  overflow: hidden;
 }
 
 /* Background image */

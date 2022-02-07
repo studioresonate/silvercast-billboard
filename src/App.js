@@ -66,6 +66,12 @@ const Panel2Subheadline = styled.h3`
 
 const Panel3 = styled.section`
   width: 392px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  .copy {
+    padding: 0 2rem;
+  }
   .supportingImage {
     height: 100px;
     object-fit: fill;
@@ -73,11 +79,11 @@ const Panel3 = styled.section`
 `;
 
 const Panel3Headline = styled.h2`
-  font-size: 1.6rem;
+  font-size: 2.6rem;
 `;
 
 const Panel3Subheadline = styled.h3`
-  font-size: 1.1rem;
+  font-size: 1.8rem;
 `;
 
 function App() {
@@ -123,6 +129,10 @@ function App() {
   const animeValue2 = animeType2.replace(/ /g, "");
   console.log(animeValue2);
 
+  const animeType3 = `${billboard.panelSelection.panel3Animation}`;
+  const animeValue3 = animeType3.replace(/ /g, "");
+  console.log(animeValue3);
+
   const bgAnimeType = `${billboard.panelSelection.backgroundAnimation}`;
   const bgAnimeValue = bgAnimeType.replace(/ /g, "");
   console.log(bgAnimeValue);
@@ -134,21 +144,7 @@ function App() {
         data-aria={animeValue2}
         className={`${billboard.panelSelection.theme}`}
       >
-        {/* <Panel1 id="panel1">
-          <p className="panelNumber">Panel one</p>
-
-          {billboard.panelSelection.panel1Headline !== null && (
-            <Panel1Headline>
-              {billboard.panelSelection.panel1Headline}
-            </Panel1Headline>
-          )}
-
-          {billboard.panelSelection.panel1SubHeadline !== null && (
-            <Panel1Subheadline>
-              {billboard.panelSelection.panel1SubHeadline}
-            </Panel1Subheadline>
-          )}
-        </Panel1> */}
+        {/* Panel 1 */}
         <Panel1 id="panel1">
           <p className="panelNumber">Panel one</p>
           <div className={`copy ${animeValue1}`}>
@@ -166,6 +162,7 @@ function App() {
           </div>
         </Panel1>
 
+        {/* Panel 2 */}
         <Panel2 id="panel2">
           <p className="panelNumber">Panel two</p>
           <div className={`copy ${animeValue2}`}>
@@ -185,21 +182,24 @@ function App() {
           <Scores show={billboard.panelSelection.showScores} />
         </Panel2>
 
+        {/* Panel 3 */}
         <Panel3 id="panel3">
           <p className="panelNumber">Panel three</p>
+          <div className={`copy ${animeValue3}`}>
+            {billboard.panelSelection.panel3Headline !== null && (
+              <Panel3Headline className={animeValue3} style={{ opacity: 0 }}>
+                {billboard.panelSelection.panel3Headline}
+              </Panel3Headline>
+            )}
 
-          {billboard.panelSelection.panel1Headline !== null && (
-            <Panel3Headline>
-              {billboard.panelSelection.panel3Headline}
-            </Panel3Headline>
-          )}
-
-          {billboard.panelSelection.panel3SubHeadline !== null && (
-            <Panel3Subheadline>
-              {billboard.panelSelection.panel3SubHeadline}
-            </Panel3Subheadline>
-          )}
+            {billboard.panelSelection.panel3SubHeadline !== null && (
+              <Panel3Subheadline className={animeValue3} style={{ opacity: 0 }}>
+                {billboard.panelSelection.panel3SubHeadline}
+              </Panel3Subheadline>
+            )}
+          </div>
         </Panel3>
+
         {billboard.panelSelection.billboardBackgroundImage !== null && (
           <img
             src={billboard.panelSelection.billboardBackgroundImage.url}
