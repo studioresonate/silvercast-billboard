@@ -31,11 +31,7 @@ section {
   background-color: var(--black);
 }
 
-/* remove anime js flash onload */
-.copy div {
-  opacity: 0;
-}
-
+/* Background image */
 .sectionBackground {
   position: absolute;
   top: 0;

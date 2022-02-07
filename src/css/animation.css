@@ -1,0 +1,92 @@
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+h2.FadeIn {
+  animation: fadeIn 1s linear 0s forwards;
+}
+
+h3.FadeIn {
+  animation: fadeIn 1s linear 0s forwards;
+  animation-delay: 0.4s;
+}
+
+/* Slide Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+h2.SlideLeft {
+  animation: slideInLeft 0.6s ease-in-out 0s forwards;
+}
+
+h3.SlideLeft {
+  animation: slideInLeft 0.4s ease-in-out 0s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Slide Down */
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+h2.SlideDown {
+  animation: slideInDown 0.6s ease-in-out 0s forwards;
+}
+
+h3.SlideDown {
+  animation: slideInDown 0.4s ease-in-out 0s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Slide Up */
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+h2.SlideUp {
+  animation: slideInUp 0.6s ease-in-out 0s forwards;
+}
+
+h3.SlideUp {
+  animation: slideInUp 0.4s ease-in-out 0s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Default value */
+.null h2,
+.null h3 {
+  opacity: 1 !important;
+}

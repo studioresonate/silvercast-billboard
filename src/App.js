@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Anime, { anime } from "react-anime";
 
+import "./css/animation.css";
 import styled from "styled-components";
 
 import Scores from "./components/Score";
@@ -139,7 +139,19 @@ function App() {
         <Panel2 id="panel2">
           <p className="panelNumber">Panel two</p>
           <div className={`copy ${animeValue2}`}>
-            {(() => {
+            {billboard.panelSelection.panel1Headline !== null && (
+              <Panel2Headline className={animeValue2} style={{ opacity: 0 }}>
+                {billboard.panelSelection.panel2Headline}
+              </Panel2Headline>
+            )}
+
+            {billboard.panelSelection.panel2SubHeadline !== null && (
+              <Panel2Subheadline className={animeValue2} style={{ opacity: 0 }}>
+                {billboard.panelSelection.panel2SubHeadline}
+              </Panel2Subheadline>
+            )}
+
+            {/* {(() => {
               switch (animeValue2) {
                 case "FadeIn":
                   return (
@@ -245,10 +257,7 @@ function App() {
                     </Anime>
                   );
               }
-            })()}
-            <Anime opacity={1} className={`${animeValue2}`}>
-              CHEE
-            </Anime>
+            })()} */}
           </div>
 
           <Scores show={billboard.panelSelection.showScores} />
