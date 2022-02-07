@@ -21,18 +21,25 @@ const Panels = styled.div`
 
 const Panel1 = styled.section`
   width: 472px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
   .supportingImage {
     height: 100px;
     object-fit: fill;
   }
+  .copy {
+    padding: 2rem 4rem;
+  }
 `;
 
 const Panel1Headline = styled.h2`
-  font-size: 1.6rem;
+  font-size: 3.2rem;
 `;
 
 const Panel1Subheadline = styled.h3`
-  font-size: 1.1rem;
+  font-size: 2.1rem;
 `;
 
 // Panel 2
@@ -108,6 +115,9 @@ function App() {
   }
 
   // remove space from animation dropdown value
+  const animeType1 = `${billboard.panelSelection.panel1Animation}`;
+  const animeValue1 = animeType1.replace(/ /g, "");
+  console.log(animeValue1);
 
   const animeType2 = `${billboard.panelSelection.panel2Animation}`;
   const animeValue2 = animeType2.replace(/ /g, "");
@@ -124,7 +134,7 @@ function App() {
         data-aria={animeValue2}
         className={`${billboard.panelSelection.theme}`}
       >
-        <Panel1 id="panel1">
+        {/* <Panel1 id="panel1">
           <p className="panelNumber">Panel one</p>
 
           {billboard.panelSelection.panel1Headline !== null && (
@@ -138,6 +148,22 @@ function App() {
               {billboard.panelSelection.panel1SubHeadline}
             </Panel1Subheadline>
           )}
+        </Panel1> */}
+        <Panel1 id="panel1">
+          <p className="panelNumber">Panel one</p>
+          <div className={`copy ${animeValue1}`}>
+            {billboard.panelSelection.panel1Headline !== null && (
+              <Panel1Headline className={animeValue1} style={{ opacity: 0 }}>
+                {billboard.panelSelection.panel1Headline}
+              </Panel1Headline>
+            )}
+
+            {billboard.panelSelection.panel2SubHeadline !== null && (
+              <Panel1Subheadline className={animeValue1} style={{ opacity: 0 }}>
+                {billboard.panelSelection.panel1SubHeadline}
+              </Panel1Subheadline>
+            )}
+          </div>
         </Panel1>
 
         <Panel2 id="panel2">
