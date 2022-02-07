@@ -9,7 +9,8 @@
   }
 }
 
-h2.FadeIn {
+h2.FadeIn,
+img.FadeIn {
   animation: fadeIn 1s linear 0s forwards;
 }
 
@@ -31,8 +32,9 @@ h3.FadeIn {
   }
 }
 
-h2.SlideLeft {
-  animation: slideInLeft 0.6s ease-in-out 0s forwards;
+h2.SlideLeft,
+img.SlideLeft {
+  animation: slideInLeft 0.7s ease-in-out 0s forwards;
 }
 
 h3.SlideLeft {

@@ -113,6 +113,10 @@ function App() {
   const animeValue2 = animeType2.replace(/ /g, "");
   console.log(animeValue2);
 
+  const bgAnimeType = `${billboard.panelSelection.backgroundAnimation}`;
+  const bgAnimeValue = bgAnimeType.replace(/ /g, "");
+  console.log(bgAnimeValue);
+
   return (
     <div className="App">
       <Panels
@@ -150,114 +154,6 @@ function App() {
                 {billboard.panelSelection.panel2SubHeadline}
               </Panel2Subheadline>
             )}
-
-            {/* {(() => {
-              switch (animeValue2) {
-                case "FadeIn":
-                  return (
-                    <Anime
-                      opacity={[0, 1]}
-                      delay={anime.stagger(200)}
-                      duration={2000}
-                      easing="easeInOutExpo"
-                    >
-                      {billboard.panelSelection.panel1Headline !== null && (
-                        <Panel2Headline>
-                          {billboard.panelSelection.panel2Headline}
-                        </Panel2Headline>
-                      )}
-
-                      {billboard.panelSelection.panel2SubHeadline !== null && (
-                        <Panel2Subheadline>
-                          {billboard.panelSelection.panel2SubHeadline}
-                        </Panel2Subheadline>
-                      )}
-                    </Anime>
-                  );
-                case "SlideLeft":
-                  return (
-                    <Anime
-                      translateX={[-300, 0]}
-                      opacity={[0, 1]}
-                      delay={anime.stagger(200)}
-                      duration={2000}
-                      easing="easeInOutExpo"
-                    >
-                      {billboard.panelSelection.panel1Headline !== null && (
-                        <Panel2Headline>
-                          {billboard.panelSelection.panel2Headline}
-                        </Panel2Headline>
-                      )}
-
-                      {billboard.panelSelection.panel2SubHeadline !== null && (
-                        <Panel2Subheadline>
-                          {billboard.panelSelection.panel2SubHeadline}
-                        </Panel2Subheadline>
-                      )}
-                    </Anime>
-                  );
-                case "SlideDown":
-                  return (
-                    <Anime
-                      translateY={[-300, 0]}
-                      opacity={[0, 1]}
-                      delay={anime.stagger(200)}
-                      duration={2000}
-                      easing="easeInOutExpo"
-                    >
-                      {billboard.panelSelection.panel1Headline !== null && (
-                        <Panel2Headline>
-                          {billboard.panelSelection.panel2Headline}
-                        </Panel2Headline>
-                      )}
-
-                      {billboard.panelSelection.panel2SubHeadline !== null && (
-                        <Panel2Subheadline>
-                          {billboard.panelSelection.panel2SubHeadline}
-                        </Panel2Subheadline>
-                      )}
-                    </Anime>
-                  );
-                case "SlideUp":
-                  return (
-                    <Anime
-                      translateY={[300, 0]}
-                      opacity={[0, 1]}
-                      delay={anime.stagger(200)}
-                      duration={2000}
-                      easing="easeInOutExpo"
-                    >
-                      {billboard.panelSelection.panel1Headline !== null && (
-                        <Panel2Headline>
-                          {billboard.panelSelection.panel2Headline}
-                        </Panel2Headline>
-                      )}
-
-                      {billboard.panelSelection.panel2SubHeadline !== null && (
-                        <Panel2Subheadline>
-                          {billboard.panelSelection.panel2SubHeadline}
-                        </Panel2Subheadline>
-                      )}
-                    </Anime>
-                  );
-                default:
-                  return (
-                    <Anime opacity={1}>
-                      {billboard.panelSelection.panel1Headline !== null && (
-                        <Panel2Headline>
-                          {billboard.panelSelection.panel2Headline}
-                        </Panel2Headline>
-                      )}
-
-                      {billboard.panelSelection.panel2SubHeadline !== null && (
-                        <Panel2Subheadline>
-                          {billboard.panelSelection.panel2SubHeadline}
-                        </Panel2Subheadline>
-                      )}
-                    </Anime>
-                  );
-              }
-            })()} */}
           </div>
 
           <Scores show={billboard.panelSelection.showScores} />
@@ -282,7 +178,7 @@ function App() {
           <img
             src={billboard.panelSelection.billboardBackgroundImage.url}
             alt={billboard.panelSelection.billboardBackgroundImage.title}
-            className="sectionBackground"
+            className={`sectionBackground ${bgAnimeValue}`}
           />
         )}
       </Panels>
