@@ -50,7 +50,7 @@ const Panel2 = styled.section`
   align-items: center;
   text-transform: uppercase;
   .copy {
-    padding: 0 4rem;
+    padding: 0 22rem 0 4rem;
   }
 `;
 
@@ -166,11 +166,7 @@ export default function Billboard() {
 
   return (
     <div>
-      <Panels
-        id="panels"
-        data-aria={animeValue2}
-        className={`${billboard.panelSelection.theme}`}
-      >
+      <Panels id="panels" className={`${billboard.panelSelection.theme}`}>
         {/* Panel 1 */}
         <Panel1 id="panel1">
           <p className="panelNumber">Panel one</p>
@@ -193,7 +189,7 @@ export default function Billboard() {
         <Panel2 id="panel2">
           <p className="panelNumber">Panel two</p>
           <div className={`copy ${animeValue2}`}>
-            {billboard.panelSelection.panel1Headline !== null && (
+            {billboard.panelSelection.panel2Headline !== null && (
               <Panel2Headline className={animeValue2} style={{ opacity: 0 }}>
                 {billboard.panelSelection.panel2Headline}
               </Panel2Headline>

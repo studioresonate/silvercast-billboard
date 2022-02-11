@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100%;
+  width: 60%;
   background-color: var(--black);
   position: absolute;
   bottom: 0;
@@ -23,7 +23,7 @@ const Scoreboard = styled.ul`
     border-left: 1px solid #999;
   }
   li {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     list-style-type: none;
@@ -31,7 +31,7 @@ const Scoreboard = styled.ul`
     padding: 10px;
     &:last-child {
       font-weight: bold;
-      font-size: 1.1rem;
+      /* font-size: 1.1rem; */
       padding: 6px 10px 4px 0px;
       text-align: right;
     }
